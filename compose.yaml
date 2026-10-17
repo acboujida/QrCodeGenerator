@@ -1,0 +1,14 @@
+services:
+  api:
+    build:
+      context: ./QrCodeGenerator.Api
+      dockerfile: Dockerfile
+
+  web:
+    build:
+      context: ./qrcode-generator-web
+      dockerfile: Dockerfile
+    ports:
+      - "8088:80"
+    depends_on:
+      - api

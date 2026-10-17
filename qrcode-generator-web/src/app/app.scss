@@ -1,0 +1,59 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 450px;
+  padding: 32px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+input, button {
+  padding: 12px;
+  border-radius: 6px;
+}
+
+input {
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.result {
+  margin-top: 24px;
+  text-align: center;
+
+  img {
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    margin: 0 auto 16px;
+  }
+}
+
+.error {
+  color: #dc2626;
+}

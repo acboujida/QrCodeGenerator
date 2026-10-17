@@ -1,0 +1,13 @@
+# .NET
+**/bin/
+**/obj/
+**/TestResults/
+
+# Angular / Node
+**/node_modules/
+**/dist/
+**/.angular/
+**/coverage/
+
+# IDE
+.vscode/

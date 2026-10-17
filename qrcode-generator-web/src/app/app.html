@@ -1,0 +1,54 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<main class="container">
+  <section class="card">
+    <p>Welcome to our QR Code Generator!</p>
+
+    <form (submit)="generate($event)">
+      <label for="url">Enter your URL</label>
+
+      <input
+        id="url"
+        type="url"
+        required
+        [value]="url()"
+        (input)="updateUrl($event)"
+        placeholder="https://example.com"
+      />
+
+      <button type="submit" [disabled]="loading()">
+        {{ loading() ? 'Generating...' : 'Generate QR Code'}}
+      </button>
+    </form>
+
+    @if (error()) {
+      <p class="error">{{ error() }}</p>
+    }
+
+    @if (imageUrl(); as image) {
+      <div class="result">
+        <img [src]="image" alt="Generated QR Code"/>
+        <a [href]="image" download="qrcode.png">
+          Download QR Code
+        </a>
+      </div>
+    }
+  </section>
+</main>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
