@@ -38,7 +38,9 @@ jobs:
         with:
           context: ./QrCodeGenerator.Api
           push: ${{ github.event_name == 'push' }}
-          tags: ghcr.io/${{ env.OWNER_LC }}/qrcodegenerator-api:latest
+          tags: |
+            ghcr.io/${{ env.OWNER_LC }}/qrcodegenerator-api:${{ github.sha }}
+            ghcr.io/${{ env.OWNER_LC }}/qrcodegenerator-api:latest
           labels: org.opencontainers.image.source=https://github.com/${{ github.repository }}
 
       - name: Build and push Angular
@@ -46,5 +48,7 @@ jobs:
         with:
           context: ./qrcode-generator-web
           push: ${{ github.event_name == 'push' }}
-          tags: ghcr.io/${{ env.OWNER_LC }}/qrcodegenerator-web:latest
+          tags: |
+            ghcr.io/${{ env.OWNER_LC }}/qrcodegenerator-web:${{ github.sha }}
+            ghcr.io/${{ env.OWNER_LC }}/qrcodegenerator-web:latest
           labels: org.opencontainers.image.source=https://github.com/${{ github.repository }}

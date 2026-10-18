@@ -1,0 +1,10 @@
+services:
+  api:
+    image: ghcr.io/acboujida/qrcodegenerator-api:latest
+
+  web:
+    image: ghcr.io/acboujida/qrcodegenerator-web:latest
+    ports:
+      - "8088:80"
+    depends_on:
+      - api
